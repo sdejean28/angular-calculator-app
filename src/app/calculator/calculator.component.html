@@ -1,6 +1,10 @@
 <div class="calculator">
 
-  <input type="text" class="calculator-screen" [value]="currentNumber" disabled />
+  <div *ngFor="let line of stack?.reverse(); let index = index">
+    <input type="text" class="calculator-screen-sm"  [value]="(stack?.length-index-1)+':'+line" disabled />
+  </div>
+
+  <input type="text" *ngIf="currentNumber"  class="calculator-screen-sm" [value]="currentNumber" disabled />
   
   <div class="calculator-keys">
     
@@ -28,7 +32,12 @@
     <button type="button" (click) = "getDecimal()" class="decimal" value=".">.</button>
     <button type="button" (click) = "clear()"  class="all-clear" value="all-clear">AC</button>
 
-    <button type="button" (click) = "getOperation('=')" class="equal-sign" value="=">=</button>
+    <button type="button" (click) = "addPile(currentNumber)" class="equal-sign" value="=">=</button>
+
+    <button type="button" (click) = "clearStack()"  class="all-clear" value="all-clear">CS</button>
+    <button type="button" (click) = "this.stack.shift()"  class="all-clear" value="all-clear">POP</button>
+    <button type="button" (click) = "clear()"  class="all-clear" value="all-clear">AC</button>
+    <button type="button" (click) = "clear()"  class="all-clear" value="all-clear">AC</button>
 
   </div>
 </div>
