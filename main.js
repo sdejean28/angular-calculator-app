@@ -38,6 +38,7 @@ app.on('activate', function () {
   if (mainWindow === null) createWindow()
 })
 
+/*
 function openModal(){
   const { BrowserWindow } = require('electron');
   let modal = new BrowserWindow({ parent: mainWindow, modal: true, show: false })
@@ -50,3 +51,4 @@ function openModal(){
 ipcMain.on('openModal', (event, arg) => {
   openModal()
 })
+*/
