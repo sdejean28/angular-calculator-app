@@ -1,10 +1,10 @@
 <div class="calculator">
 
-  <div *ngFor="let line of stack?.reverse(); let index = index">
-    <input type="text" class="calculator-screen-sm"  [value]="(stack?.length-index-1)+':'+line" disabled />
+  <div *ngFor="let line of getstack().reverse(); let index = index">
+    <input *ngIf="!(index==0 && currentNumber)"  type="text" class="calculator-screen"  [value]="line!==''?(displayStackLength-index-1)+':'+line : ''" disabled />
   </div>
 
-  <input type="text" *ngIf="currentNumber"  class="calculator-screen-sm" [value]="currentNumber" disabled />
+  <input type="text" *ngIf="currentNumber"  class="calculator-screen" [value]="currentNumber" disabled />
   
   <div class="calculator-keys">
     
@@ -36,8 +36,8 @@
 
     <button type="button" (click) = "clearStack()"  class="all-clear" value="all-clear">CS</button>
     <button type="button" (click) = "this.stack.shift()"  class="all-clear" value="all-clear">POP</button>
-    <button type="button" (click) = "clear()"  class="all-clear" value="all-clear">AC</button>
-    <button type="button" (click) = "clear()"  class="all-clear" value="all-clear">AC</button>
+    <button type="button" (click) = "negate()"  class="all-clear" value="all-clear">NEG</button>
+    <button type="button" (click) = "stack_length()"  class="all-clear" value="all-clear">SL</button>
 
   </div>
 </div>

@@ -7,21 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
 
+
+  displayStackLength = 4;
+
   currentNumber = '';
-  firstOperand = null;
-  operator = null;
-  waitForSecondNumber = false;
   stack = [];
+  dstack = [];
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  fakeArray(length: number): Array<any> {
-    if (length >= 0) {
-      return new Array(length);
-    }
   }
 
 
@@ -75,15 +70,29 @@ export class CalculatorComponent implements OnInit {
 
     }
      
+    console.log('stack',this.stack);
   }
 
   public clear(){
     this.currentNumber = '';
   }
 
+
+  public stack_length(){
+    this.stack.unshift( this.stack.length );
+  }
+
+  public negate(){
+    var o = this.stack.shift();
+    console.log(o);
+    if (o != undefined && o !== '') { 
+      this.stack.unshift( -o );
+    }
+  }
+
   public clearStack(){
     this.currentNumber = '';
-    this.stack = [];
+    this.stack = this.dstack = [];
   }
 
   public addPile( number ){
@@ -98,5 +107,15 @@ export class CalculatorComponent implements OnInit {
         this.stack.unshift( o );
       }
     }
+
+    console.log('stack',this.stack);
   }
+
+  public getstack(){
+    var s=[...this.stack].slice(0,this.displayStackLength);
+    for (let i=s.length;i<this.displayStackLength;i++) s.push('');
+    console.log('getstack>',s);
+    return s;
+  }
+
 }

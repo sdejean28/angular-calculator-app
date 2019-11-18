@@ -1,12 +1,9 @@
 # Angular 8 Example Calculator Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+This project is a fork of "techiediaries/angular-calculator-app"
 
-You can read the following tutorials for more information about how to build this application from scratch:
+If was adapted to use RPN notation (Reverse Polish Notation).
 
-- [Angular 8 Tutorial: Build your First Angular App](https://www.techiediaries.com/angular-8-tutorial-build-first-angular-calculator-app)
-
-- [Angular 8 Data (Event & Property) Binding Tutorial: Build your First Angular App](https://www.techiediaries.com/angular-data-event-property-binding)
 
 ![Angular 8 Example Calculator](https://www.diigo.com/file/image/bbccosoazobaoooccdzdrocqebd/Ngcalculator.jpg)
 
