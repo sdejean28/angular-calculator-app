@@ -5,7 +5,7 @@ This project is a fork of "techiediaries/angular-calculator-app"
 If was adapted to use RPN notation (Reverse Polish Notation).
 
 
-![Angular 8 Example Calculator](https://www.diigo.com/file/image/bbccosoazobaoooccdzdrocqebd/Ngcalculator.jpg)
+![Angular 8 Example Calculator](https://github.com/sdejean28/angular-calculator-app/blob/master/screen_capture.JPG?raw=true)
 
 ## Development server
 
